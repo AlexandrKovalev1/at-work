@@ -1,0 +1,41 @@
+.header {
+  width: 100%;
+  height: 56px;
+  background-color: var(--color-06);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.registeredMenu {
+  display: flex;
+  column-gap: 20px;
+  align-items: center;
+}
+
+.infoIconsBlock {
+  display: flex;
+  column-gap: 4px;
+  align-items: center;
+
+  > * {
+    cursor: pointer;
+  }
+}
+
+.photoNameBlock {
+  cursor: pointer;
+  display: flex;
+  column-gap: 8px;
+  align-items: center;
+
+  & img {
+    overflow: hidden;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+}
