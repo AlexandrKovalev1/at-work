@@ -1,0 +1,34 @@
+@mixin typography($fontSize, $fontWeight) {
+  margin: 0;
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  color: var(--color-01);
+}
+
+.title {
+  @include typography(var(--font-size-xxl), var(--font-weight-Semibold));
+}
+
+.headline {
+  @include typography(var(--font-size-xl), var(--font-weight-Semibold));
+}
+
+.text1-semibold {
+  @include typography(var(--font-size-l), var(--font-weight-Semibold));
+}
+
+.text1-medium {
+  @include typography(var(--font-size-l), var(--font-weight-medium));
+}
+
+.text2-semibold {
+  @include typography(var(--font-size-m), var(--font-weight-Semibold));
+}
+
+.text2-medium {
+  @include typography(var(--font-size-m), var(--font-weight-medium));
+}
+
+.caption {
+  @include typography(var(--font-size-s), var(--font-weight-regular));
+}
