@@ -1,0 +1,52 @@
+.wrapper {
+  display: flex;
+  column-gap: 20px;
+
+  width: 100%;
+  max-width: 360px;
+  height: 100%;
+  min-height: 168px;
+  padding: 24px;
+
+  &.archive {
+    filter: grayscale(100%);
+  }
+}
+
+.avatar {
+  overflow: hidden;
+
+  width: 100%;
+  max-width: 112px;
+  height: 100%;
+
+  border-radius: 8px;
+}
+
+.information {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 100%;
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.userName {
+  color: var(--color-accent);
+}
+
+.city {
+  color: var(--color-03);
+}
+
+.company {
+  color: var(--color-03);
+}
