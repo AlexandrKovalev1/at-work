@@ -1,0 +1,37 @@
+.iconButton {
+  all: unset;
+  cursor: pointer;
+
+  &[data-state='open'] {
+    & svg {
+      fill: var(--color-02);
+    }
+  }
+
+  &:hover svg {
+    fill: var(--color-accent);
+    transition: 0.3s;
+  }
+}
+
+.menuContent {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+
+  padding: 8px;
+
+  background-color: var(--color-06);
+  border-radius: 12px;
+}
+
+.menuItem {
+  all: unset;
+  cursor: pointer;
+  padding: 8px 12px;
+
+  &:hover {
+    color: var(--color-accent);
+    transition: 0.3s;
+  }
+}
