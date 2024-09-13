@@ -1,0 +1,25 @@
+.button {
+  all: unset;
+
+  cursor: pointer;
+
+  padding: 12px 42px;
+
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-Semibold);
+  color: var(--color-06);
+
+  background-color: var(--color-01);
+  border-radius: 50px;
+
+  &:disabled {
+    cursor: initial;
+    opacity: 0.5;
+  }
+
+  &:hover {
+    color: var(--color-02);
+    background-color: var(--color-05);
+    transition: 0.5s;
+  }
+}
