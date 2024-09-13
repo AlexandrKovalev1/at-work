@@ -4,6 +4,7 @@
 
   &[data-state='open'] {
     & svg {
+      cursor: pointer;
       fill: var(--color-02);
     }
   }
