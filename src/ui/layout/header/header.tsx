@@ -10,7 +10,7 @@ import photo from '../../../assets/images/header-foto.jpg'
 export const Header = () => {
   return (
     <header className={s.header}>
-      <Container className={s.container}>
+      <Container className={s.container} upper>
         <Link to={PATH.ROOT}>
           <Logo />
         </Link>
