@@ -1,5 +1,8 @@
 @mixin typography($fontSize, $fontWeight) {
+  cursor: default;
+
   margin: 0;
+
   font-size: $fontSize;
   font-weight: $fontWeight;
   color: var(--color-01);
