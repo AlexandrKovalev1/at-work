@@ -1,1 +1,1 @@
-export * from './userItemCard.tsx'
+export * from './userItem-card'

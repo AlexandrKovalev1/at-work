@@ -1,19 +1,20 @@
 import { Card, DropDown, Typography } from '../index.ts'
-import s from './userItemCard.module.scss'
+import s from './userItem-card.module.scss'
 
 type Props = {
+  id: number
   userName: string
   city: string
   companyName: string
   avatar: string
   status: 'active' | 'archive' | 'hidden'
 }
-export const UserItemCard = ({ userName, city, companyName, avatar, status }: Props) => {
+export const UserItemCard = ({ userName, city, companyName, avatar, status, id }: Props) => {
   return (
     <Card className={`${s.wrapper} ${status === 'archive' && s.archive}`}>
       <img src={avatar} alt="user-avatar" className={s.avatar} />
       <div className={s.information}>
-        <DropDown className={s.menu} active={status === 'active'} />
+        <DropDown className={s.menu} active={status === 'active'} id={id} />
         <div>
           <Typography as={'h3'} variant={'headline'} className={s.userName}>
             {userName}
