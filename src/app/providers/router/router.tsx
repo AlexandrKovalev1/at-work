@@ -1,10 +1,12 @@
-import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, Navigate, Outlet, RouterProvider } from 'react-router-dom'
 import { Layout } from '../../../ui/layout/layout.tsx'
 import { Users } from '../../../pages/users'
 
 export const PATH = {
   ROOT: '/',
   USERS: '/users',
+  USER_EDIT: 'edit_user',
+  USER_EDIT_PAGE: 'edit_user/:id',
 } as const
 
 const router = createBrowserRouter([
@@ -18,7 +20,17 @@ const router = createBrowserRouter([
       },
       {
         path: PATH.USERS,
-        element: <Users />,
+        element: <Outlet />,
+        children: [
+          {
+            index: true,
+            element: <Users />,
+          },
+          {
+            path: PATH.USER_EDIT_PAGE,
+            element: <div>Edit</div>,
+          },
+        ],
       },
     ],
   },
