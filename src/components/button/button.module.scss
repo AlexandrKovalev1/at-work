@@ -18,7 +18,7 @@
     opacity: 0.5;
   }
 
-  &:hover {
+  &:hover:not(:disabled) {
     color: var(--color-02);
     background-color: var(--color-05);
     transition: 0.5s;
