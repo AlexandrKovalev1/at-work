@@ -5,13 +5,14 @@ import { Outlet, useNavigate, useParams } from 'react-router-dom'
 import { useAppSelector } from '../../app/providers/store/store.ts'
 import { selectAllUsers } from '../../slices/users/model/users-slice.ts'
 import { EditUserNavigation } from './edit-user-navigation'
+import { PATH } from '../../app/providers/router/router.tsx'
 
 export const EditUser = () => {
   const { id } = useParams()
   const navigate = useNavigate()
-  const allUsers = useAppSelector(selectAllUsers)
-  const onBackClickHandler = () => navigate(-1)
 
+  const onBackClickHandler = () => navigate(PATH.USERS)
+  const allUsers = useAppSelector(selectAllUsers)
   if (!id) return
   const currentUser = allUsers.find(u => u.id === +id)
   if (!currentUser) return
@@ -29,7 +30,7 @@ export const EditUser = () => {
           <img src={currentUser.avatar} alt="user-avatar" className={s.avatar} />
           <EditUserNavigation />
         </Card>
-        <Outlet />
+        <Outlet context={id} />
       </div>
     </div>
   )
