@@ -1,7 +1,78 @@
-// @flow
-import * as React from 'react'
+import s from './users.module.scss'
+import cover from '../../assets/images/cardCover.jpg'
+import { Typography, UserItemCard } from '../../components'
+import { useEffect } from 'react'
+import {
+  selectActiveUsers,
+  selectArchivedUsers,
+  usersThunks,
+} from '../../slices/users/model/users-slice.ts'
+import { useAppDispatch, useAppSelector } from '../../app/providers/store/store.ts'
+import { CustomUser } from '../../slices/users/user.types.ts'
 
-type Props = {}
-export const Users = (props: Props) => {
-  return <div>Users</div>
+export const Users = () => {
+  const dispatch = useAppDispatch()
+  useEffect(() => {
+    dispatch(usersThunks.fetchUsers())
+  })
+
+  return (
+    <div className={s.wrapper}>
+      <ActiveUsers />
+      <Archive />
+    </div>
+  )
+}
+
+const ActiveUsers = () => {
+  const activeUsers = useAppSelector<CustomUser[]>(selectActiveUsers)
+
+  return (
+    <div>
+      <div className={s.categoryHeading}>
+        <Typography as={'h2'} variant={'title'}>
+          Активные
+        </Typography>
+      </div>
+      <div className={s.contentBlock}>
+        {activeUsers?.map(u => (
+          <UserItemCard
+            key={u.id}
+            userName={u.username}
+            city={u.address.city}
+            companyName={u.company.name}
+            avatar={cover}
+            status={u.status}
+            id={u.id}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
+
+const Archive = () => {
+  const archiveUsers = useAppSelector<CustomUser[]>(selectArchivedUsers)
+  return (
+    <div>
+      <div className={s.categoryHeading}>
+        <Typography as={'h2'} variant={'title'}>
+          Архив
+        </Typography>
+      </div>
+      <div className={s.contentBlock}>
+        {archiveUsers?.map(u => (
+          <UserItemCard
+            key={u.id}
+            userName={u.username}
+            city={u.address.city}
+            companyName={u.company.name}
+            avatar={cover}
+            status={u.status}
+            id={u.id}
+          />
+        ))}
+      </div>
+    </div>
+  )
 }

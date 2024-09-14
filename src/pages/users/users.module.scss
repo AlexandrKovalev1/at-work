@@ -1,0 +1,19 @@
+.wrapper {
+  display: grid;
+  row-gap: 40px;
+  padding-top: calc(40px + var(--header-height));
+}
+
+.categoryHeading {
+  cursor: initial;
+  width: 100%;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-04);
+}
+
+.contentBlock {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(162px, 360px));
+  gap: 32px 40px;
+  padding-top: 28px;
+}
