@@ -1,4 +1,4 @@
-import { Card, DropDown, Typography } from '../../components'
+import { Card, DropDown, Typography } from '../index.ts'
 import s from './userItemCard.module.scss'
 
 type Props = {
