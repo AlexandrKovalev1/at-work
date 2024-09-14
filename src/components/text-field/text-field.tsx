@@ -50,7 +50,7 @@ export const TextField = ({
       <div className={s.inputWrapper}>
         <input
           type="text"
-          className={s.input}
+          className={`${s.input} ${errorMessage && s.error}`}
           {...props}
           onChange={onChangeHandler}
           value={inputValue}

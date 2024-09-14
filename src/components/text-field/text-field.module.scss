@@ -23,6 +23,10 @@
   &:focus-visible {
     color: var(--color-02);
   }
+
+  &.error {
+    border-color: var(--color-danger);
+  }
 }
 
 .icon {
