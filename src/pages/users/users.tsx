@@ -1,9 +1,9 @@
 import s from './users.module.scss'
-import cover from '../../assets/images/cardCover.jpg'
 import { Typography, UserItemCard } from '../../components'
 import { useEffect } from 'react'
 import {
   selectActiveUsers,
+  selectAllUsers,
   selectArchivedUsers,
   usersThunks,
 } from '../../slices/users/model/users-slice.ts'
@@ -11,10 +11,13 @@ import { useAppDispatch, useAppSelector } from '../../app/providers/store/store.
 import { CustomUser } from '../../slices/users/user.types.ts'
 
 export const Users = () => {
+  const allUsers = useAppSelector(selectAllUsers)
   const dispatch = useAppDispatch()
   useEffect(() => {
-    dispatch(usersThunks.fetchUsers())
-  })
+    if (!allUsers.length) {
+      dispatch(usersThunks.fetchUsers())
+    }
+  }, [allUsers, dispatch])
 
   return (
     <div className={s.wrapper}>
@@ -41,7 +44,7 @@ const ActiveUsers = () => {
             userName={u.username}
             city={u.address.city}
             companyName={u.company.name}
-            avatar={cover}
+            avatar={u.avatar}
             status={u.status}
             id={u.id}
           />
@@ -67,7 +70,7 @@ const Archive = () => {
             userName={u.username}
             city={u.address.city}
             companyName={u.company.name}
-            avatar={cover}
+            avatar={u.avatar}
             status={u.status}
             id={u.id}
           />

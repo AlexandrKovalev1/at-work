@@ -3,6 +3,7 @@ import { CustomUser, DomainUser, UserStatus } from '../user.types.ts'
 import { userApi } from '../api/user-api.ts'
 import { isAxiosError } from 'axios'
 import { createSelector, PayloadAction } from '@reduxjs/toolkit'
+import cover from '../../../assets/images/cardCover.jpg'
 
 const slice = createAppSlice({
   name: 'users',
@@ -24,7 +25,7 @@ const slice = createAppSlice({
       },
       {
         fulfilled: (state, action) => {
-          state.users = action.payload.map(u => ({ ...u, status: 'active' }))
+          state.users = action.payload.map(u => ({ ...u, status: 'active', avatar: cover }))
         },
       }
     ),

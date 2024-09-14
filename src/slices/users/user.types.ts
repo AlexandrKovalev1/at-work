@@ -28,4 +28,5 @@ export type UserCompany = {
 export type UserStatus = 'active' | 'archive' | 'hidden'
 export type CustomUser = DomainUser & {
   status: UserStatus
+  avatar: string
 }
