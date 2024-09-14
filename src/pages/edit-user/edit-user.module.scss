@@ -1,0 +1,56 @@
+.wrapper {
+  position: relative;
+}
+
+.backButtonWrapper {
+  cursor: pointer;
+
+  position: fixed;
+  top: var(--header-height);
+
+  display: flex;
+  align-items: center;
+
+  padding: 20px 0;
+
+  &:hover {
+    button {
+      color: var(--color-accent);
+      transition: 0.3s;
+    }
+
+    svg path {
+      stroke: var(--color-accent);
+      transition: 0.3s;
+    }
+  }
+
+  & button {
+    all: unset;
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  column-gap: 40px;
+  padding-top: calc(92px + var(--header-height));
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  padding: 40px;
+}
+
+.avatar {
+  overflow: hidden;
+
+  width: 100%;
+  max-width: 280px;
+  height: 100%;
+  max-height: 485px;
+
+  border-radius: 8px;
+}
