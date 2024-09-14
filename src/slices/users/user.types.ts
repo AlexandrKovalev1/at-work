@@ -30,3 +30,13 @@ export type CustomUser = DomainUser & {
   status: UserStatus
   avatar: string
 }
+
+export type EditUserData = {
+  id: string
+  name: string
+  nickName: string
+  email: string
+  city: string
+  phone: string
+  company: string
+}

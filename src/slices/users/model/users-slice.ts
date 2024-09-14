@@ -1,5 +1,5 @@
 import { createAppSlice } from '../../../common/utils/createAppSlice.ts'
-import { CustomUser, DomainUser, UserStatus } from '../user.types.ts'
+import { CustomUser, DomainUser, EditUserData, UserStatus } from '../user.types.ts'
 import { userApi } from '../api/user-api.ts'
 import { isAxiosError } from 'axios'
 import { createSelector, PayloadAction } from '@reduxjs/toolkit'
@@ -26,6 +26,24 @@ const slice = createAppSlice({
       {
         fulfilled: (state, action) => {
           state.users = action.payload.map(u => ({ ...u, status: 'active', avatar: cover }))
+        },
+      }
+    ),
+    editUser: create.asyncThunk<EditUserData, EditUserData>(
+      async (data: EditUserData) => {
+        return await userApi.editUser(data)
+      },
+      {
+        fulfilled: (state, action) => {
+          const user = state.users.find(u => u.id === +action.payload.id)
+          if (user) {
+            user.name = action.payload.name
+            user.username = action.payload.nickName
+            user.email = action.payload.email
+            user.address.city = action.payload.city
+            user.phone = action.payload.phone
+            user.company.name = action.payload.company
+          }
         },
       }
     ),
