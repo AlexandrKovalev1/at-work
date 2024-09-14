@@ -1,4 +1,4 @@
-export type User = {
+export type DomainUser = {
   id: number
   name: string
   username: string
@@ -23,4 +23,9 @@ export type UserCompany = {
   name: string
   catchPhrase: string
   bs: string
+}
+
+export type UserStatus = 'active' | 'archive' | 'hidden'
+export type CustomUser = DomainUser & {
+  status: UserStatus
 }
