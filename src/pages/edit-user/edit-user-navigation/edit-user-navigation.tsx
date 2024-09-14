@@ -12,7 +12,7 @@ export const EditUserNavigation = () => {
           </Typography>
         </li>
         <li>
-          <Typography as={Category} to={'/'} variant={'text2-semibold'}>
+          <Typography as={Category} to={PATH.USER_EDIT_WORKSPACE} variant={'text2-semibold'}>
             Рабочее пространство
           </Typography>
         </li>
