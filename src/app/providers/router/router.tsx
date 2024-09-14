@@ -35,10 +35,6 @@ const router = createBrowserRouter([
             path: PATH.USER_EDIT_PAGE,
             element: <EditUser />,
             children: [
-              {
-                index: true,
-                element: <Navigate to={PATH.USER_EDIT_PROFILE} />,
-              },
               { path: PATH.USER_EDIT_PROFILE, element: <EditProfile /> },
               { path: PATH.USER_EDIT_WORKSPACE, element: <EditWorkspace /> },
             ],

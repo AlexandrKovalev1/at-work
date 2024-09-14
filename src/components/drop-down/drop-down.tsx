@@ -37,8 +37,7 @@ export const DropDown = ({ className, active, id }: Props) => {
       <DropdownMenu.Portal>
         <DropdownMenu.Content className={s.menuContent} align={'end'}>
           <DropdownMenu.Item className={s.menuItem}>
-            <Link to={`${PATH.USER_EDIT}/${id}`} className={s.link}>
-              {' '}
+            <Link to={`${PATH.USER_EDIT}/${id}/${PATH.USER_EDIT_PROFILE}`} className={s.link}>
               Редактировать
             </Link>
           </DropdownMenu.Item>
