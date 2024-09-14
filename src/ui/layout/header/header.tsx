@@ -1,5 +1,5 @@
 import s from './header.module.scss'
-import { Container, Typography } from '../../../components'
+import { Container, LinearProgress, Typography } from '../../../components'
 import { Link } from 'react-router-dom'
 import { PATH } from '../../../app/providers/router/router.tsx'
 import { Logo } from '../../../assets/logo.tsx'
@@ -27,6 +27,7 @@ export const Header = () => {
           </div>
         </div>
       </Container>
+      <LinearProgress />
     </header>
   )
 }
