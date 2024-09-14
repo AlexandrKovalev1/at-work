@@ -1,5 +1,5 @@
 import s from './edit-profile.module.scss'
-import { Button, Card, TextField, Typography } from '../../../components'
+import { Button, Card, Dialog, TextField, Typography } from '../../../components'
 import { useOutletContext } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../../../app/providers/store/store.ts'
 import { selectAllUsers, usersThunks } from '../../../slices/users/model/users-slice.ts'
@@ -24,7 +24,7 @@ export const EditProfile = () => {
       company: currentUser!.company.name,
     },
     onSubmit: values => {
-      dispatch(usersThunks.editUser(values)).unwrap().then()
+      dispatch(usersThunks.editUser(values))
     },
     validate: values => {
       const errors: Partial<EditUserData> = {}
@@ -85,6 +85,7 @@ export const EditProfile = () => {
           Сохранить
         </Button>
       </form>
+      <Dialog />
     </Card>
   )
 }
