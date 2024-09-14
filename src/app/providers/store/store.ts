@@ -3,7 +3,7 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import { userReducer } from '../../../slices/users/model/users-slice.ts'
 
 export const store = configureStore({
-  reducer: { [userReducer.name]: userReducer },
+  reducer: { users: userReducer },
 })
 
 export type AppDispatch = typeof store.dispatch
