@@ -20,6 +20,7 @@ const router = createBrowserRouter([
     element: <Layout />,
     path: PATH.ROOT,
     children: [
+      { element: <Navigate to={PATH.ROOT} />, path: PATH.GITHUB_PAGES },
       { element: <Navigate to={PATH.USERS} />, path: PATH.ROOT },
       {
         element: <Navigate to={PATH.USERS} />,
