@@ -1,23 +1,12 @@
 import s from './users.module.scss'
-import { Typography, UserItemCard } from '../../components'
-import { useEffect } from 'react'
-import {
-  selectActiveUsers,
-  selectAllUsers,
-  selectArchivedUsers,
-  usersThunks,
-} from '../../slices/users/model/users-slice.ts'
-import { useAppDispatch, useAppSelector } from '../../app/providers/store/store.ts'
-import { CustomUser } from '../../slices/users/user.types.ts'
+import {Typography, UserItemCard} from '../../components'
+import {selectActiveUsers, selectArchivedUsers,} from '../../slices/users/model/users-slice.ts'
+import {useAppSelector} from '../../app/providers/store/store.ts'
+import {CustomUser} from '../../slices/users/user.types.ts'
+import {useFetchUsers} from "../../common/utils/useFetchUsers.ts";
 
 export const Users = () => {
-  const allUsers = useAppSelector(selectAllUsers)
-  const dispatch = useAppDispatch()
-  useEffect(() => {
-    if (!allUsers.length) {
-      dispatch(usersThunks.fetchUsers())
-    }
-  }, [allUsers, dispatch])
+useFetchUsers()
 
   return (
     <div className={s.wrapper}>
