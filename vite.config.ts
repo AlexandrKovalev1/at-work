@@ -6,3 +6,4 @@ export default defineConfig({
   base: 'https://alexandrkovalev1.github.io/at-work/',
   plugins: [react()],
 })
+
