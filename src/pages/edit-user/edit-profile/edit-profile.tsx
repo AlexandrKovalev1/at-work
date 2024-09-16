@@ -28,12 +28,12 @@ export const EditProfile = () => {
     },
     validate: values => {
       const errors: Partial<EditUserData> = {}
-      if (!values.company) errors.company = 'Required'
-      if (!values.phone) errors.phone = 'Required'
-      if (!values.city) errors.city = 'Required'
-      if (!values.email) errors.email = 'Required'
-      if (!values.nickName) errors.nickName = 'Required'
-      if (!values.name) errors.name = 'Required'
+      if (!values.company) errors.company = 'Поле не должно быть пустым'
+      if (!values.phone) errors.phone = 'Поле не должно быть пустым'
+      if (!values.city) errors.city = 'Поле не должно быть пустым'
+      if (!values.email) errors.email = 'Поле не должно быть пустым'
+      if (!values.nickName) errors.nickName = 'Поле не должно быть пустым'
+      if (!values.name) errors.name = 'Поле не должно быть пустым'
 
       return errors
     },
